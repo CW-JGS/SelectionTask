@@ -1,6 +1,7 @@
 using System;
 
-class Program {
+class Program
+{
     static void Main(string[] args)
     {
         string InputUsername = "";
@@ -13,8 +14,8 @@ class Program {
         {
 
             Console.WriteLine("\n You have selected complex mode");
-            string[] usernames = { "CW-JGS", "Coffee2022", "tim", "Johno", "student", "teacher"};
-            string[] passwords = { "password", "is", "not", "a","good","password"};
+            string[] usernames = { "CW-JGS", "Coffee2022", "tim", "Johno", "student", "teacher" };
+            string[] passwords = { "password", "is", "not", "a", "good", "password" };
             bool wasSuccessful = false;
             Console.Write("\n Enter your Username : ");
             InputUsername = Console.ReadLine();
@@ -28,22 +29,26 @@ class Program {
                     if (passwords[i] == InputPassword)
                     {
                         wasSuccessful = true;
+                        break;
                     }
                     else
                     {
                         wasSuccessful = false;
+                        break;
                     }
                 }
             }
             if (wasSuccessful != false)
             {
-                Console.WriteLine($" Login Successful - welcome {InputUsername}");
-            }else
+                Console.WriteLine($"\n Login Successful - welcome {InputUsername}");
+            }
+            else
             {
-                Console.WriteLine(" Login Unsuccessful");
+                Console.WriteLine("\n Login Unsuccessful - :(");
             }
 
-        } else
+        }
+        else
         {
             Console.WriteLine("\n You have selected simple mode");
             string trueUsername = "Coffee2022";
@@ -55,7 +60,7 @@ class Program {
             if (InputUsername == trueUsername && InputPassword == truePassword) Console.WriteLine($"\n Login Successful - welcome {trueUsername} ");
             if (InputUsername != trueUsername) Console.WriteLine("\n Logon unsuccessful - User does not exist");
             if (InputUsername == trueUsername && InputPassword != truePassword) Console.WriteLine("\n Logon unsuccessful - Incorrect Password");
-            
+
         }
     }
 }
